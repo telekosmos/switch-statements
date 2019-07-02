@@ -1,24 +1,24 @@
 
 class PNGConverter {
-  convert(filename) {
+  static convert(filename) {
     console.log(`PNGConverter: Convert ${filename} to PNG`);
   }
 }
 
 class GIFConverter {
-  convert(filename) {
+  static convert(filename) {
     console.log(`GIFConverter: Convert ${filename} to GIF`);
   }
 }
 
 class JPGConverter {
-  convert(filename) {
+  static convert(filename) {
     console.log(`JPGConverter: Convert ${filename} to JPG`);
   }
 }
 
 class SVGConverter {
-  convert(filename) {
+  static convert(filename) {
     console.log(`SVGConverter: Convert ${filename} to SVG`);
   }
 }
@@ -28,10 +28,10 @@ class PicConverter {
   constructor(filename) {
     this.filename = filename;
     this.converters = {
-      'png': new PNGConverter(),
-      'gif': new GIFConverter(),
-      'jpg': new JPGConverter(),
-      'svg': new SVGConverter()
+      'png': PNGConverter,
+      'gif': GIFConverter,
+      'jpg': JPGConverter,
+      'svg': SVGConverter,
     }
   }
 
@@ -43,3 +43,4 @@ class PicConverter {
 
 const converter = new PicConverter('my-filename.jpg');
 converter.convert('gif');
+converter.convert('svg');
