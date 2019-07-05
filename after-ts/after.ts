@@ -3,25 +3,25 @@ interface IConverter {
 }
 
 class PNGFileConverter implements IConverter {
-  convert(filename: string) {
+  convert(filename: string): void {
     console.log(`PNGConverter: Convert ${filename} to PNG`);
   }
 }
 
 class GIFFileConverter implements IConverter {
-  convert(filename: string) {
+  convert(filename: string): void {
     console.log(`GIFConverter: Convert ${filename} to GIF`);
   }
 }
 
-class JPGConverter {
-  static convert(filename) {
+class JPGConverter implements IConverter{
+  convert(filename: string): void {
     console.log(`JPGConverter: Convert ${filename} to JPG`);
   }
 }
 
-class SVGConverter {
-  static convert(filename) {
+class SVGConverter implements IConverter {
+  convert(filename: string): void {
     console.log(`SVGConverter: Convert ${filename} to SVG`);
   }
 }

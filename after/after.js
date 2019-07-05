@@ -13,7 +13,7 @@ class PicConverter {
   }
 
   convert(format) {
-    const converter = this.converters[format] || this.converters.gif;
+    const converter = this.converters[format] || this.converters.png;
     converter.convert(this.filename);
   }
 }
